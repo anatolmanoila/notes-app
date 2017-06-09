@@ -2,17 +2,13 @@ module.exports = {
   template: require('./NotesList.html'),
   controller: NotesList,
   bindings: {
-    notes: '=',
-    filter: '<'
+    notes: '='
   }
 };
 
 /** @ngInject */
 function NotesList(notesService) {
   this.notesService = notesService;
-  this.completeReducer = function (count, note) {
-    return note.completed ? count + 1 : count;
-  };
 }
 
 NotesList.prototype = {

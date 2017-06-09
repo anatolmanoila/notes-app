@@ -1,15 +1,11 @@
-<li ng-class="{ 'editing': $ctrl.editing, 'completed': $ctrl.note.completed }">
+<li ng-class="{ 'editing': $ctrl.editing }">
   <note-text-input ng-if="$ctrl.editing"
                    text="$ctrl.note.text"
                    editing="$ctrl.editing"
                    on-create="$ctrl.handleSave(text)">
 
   </note-text-input>
-  <div class="view" ng-if="!$ctrl.editing">
-    <input type="checkbox" class="toggle"
-            ng-checked="$ctrl.note.completed"
-            ng-click="$ctrl.onChange({id: $ctrl.ote.id})"
-            />
+  <div class="view" ng-if="!$ctrl.editing">    
     <label ng-dblclick="$ctrl.handleDoubleClick()">{{ $ctrl.note.text }}</label>
     <button class="destroy" ng-click="$ctrl.handleDestroy($ctrl.note.id)"></button>
   </div>

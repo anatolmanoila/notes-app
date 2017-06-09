@@ -1,7 +1,7 @@
 var angular = require('angular');
 require('./index.scss');
 
-var app = 'notesApp';
+var app = 'app';
 var notes = require('./app/notes/notes');
 var AppContainer = require('./app/containers/App');
 var Header = require('./app/components/Header');

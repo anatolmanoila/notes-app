@@ -1,0 +1,15 @@
+<section class="main">
+  <input ng-if="$ctrl.todos.length"
+         class="toggle-all"
+         type="checkbox"
+         ng-checked="$ctrl.todos.reduce($ctrl.completeReducer, 0) === $ctrl.todos.length"
+         ng-click="$ctrl.handleCompleteAll()" />
+  <ul class="note-list">
+    <note-item ng-repeat="note in $ctrl.notes"
+               note="note"
+               on-destroy="$ctrl.handleDestroy(id)"
+               on-change="$ctrl.handleChange(id)"
+               on-save="$ctrl.handleSave(note)">
+    </note-item>
+  </ul>
+</section>
